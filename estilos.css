@@ -1,0 +1,119 @@
+/*SERVE PARA RESETAR OS MODELOS DA PAG, SEMPRE PADRÃO JA ADD A FONTE AQUI TAMBÉM*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/*AJUSTAR TAMANHO DA FONTE E LARGURA DO HTML*/
+
+html {
+	height: 100vh; /*vh indica que vai ter totalmente a altura da tela*/
+	font-size: 16px; /*por padrão o html inteiro vai ter a fonte com esse padrão*/
+}
+
+/*AJUSTAR TAMANHO DO BODY E COR*/
+body {
+	background: linear-gradient(to bottom,#000000, #151515, #1C1C1C, #2E2E2E, #424242);   /*cor de fundo do body, como propriamente dito*/
+	height: 100%; /*altura de 100% o tamanho do html (vh)*/
+}
+
+/*AJUSTE DO CONTAINER PRINCIPAL*/
+.container {
+	height: 100%; /*altura de 100% o tamanho do html (vh)*/
+	max-width: 550px; /*largura maxima do container, vai delimitar no maximo a quantidade que colocamos aqui, não vai passar disso*/
+	margin: 0 auto; /*para centralizar todos os elementos do container*/
+	display: flex; /*aplicado para não ficar todos os icones um ao lado do outro*/
+	flex-direction: column; /*aplicado para ficar em coluna um ao lado do outro*/
+	justify-content: center; /*aplicado para centraliza o container no meio da pagina*/
+	padding: 30px; /*para adicionar espaçamento em todos os lados dos itens dentro do container*/
+	color: #fff; /*color aplicado para forçar os textos dentro do container a ficar, no caso branco*/
+}
+
+/*para todos os links (a) receberem essa estilização*/
+a{ 
+	text-decoration: none; /*tira o underline dos itens*/
+	color: #fff;
+}
+
+/*criar uma classe para adicionar o degrade nos botões e caso eu queira usar mais em alguma tag*/
+.degrade {
+	background: linear-gradient(to right, #F4FA58, #F7FE2E, #FFFF00); /*usar essa formatação para criar o degrade, primeiro sinalizando da onde eu quero que ele parta (to right)*/
+}
+
+/*ESTILO DO HEADER*/
+
+header {
+	text-align: center; /*aplicado para centralizar os elementos, agora do header*/
+	margin-bottom: 40px; /*aplicado para dar espaçamento abaixo dos itens */
+}
+
+
+/*para trabalhar direto no codigo especifico no caso img de imagem (adiciona o container pai e depois o filho*/
+header img{        
+	max-width: 120px; /*tamanho maximo do elemento, nesse caso a foto*/
+	border: 3px solid #FFFF00; /*adicionei uma borda a minha foto*/
+	border-radius: 70px; /*adicionado para deixar as bordas curvas*/
+	margin-bottom: 20px; /*adicionado para dar espaçamento abaixo da foto*/
+}
+
+/*para trabalhar direto no codigo especifico no caso h1 (adiciona o container pai e depois o filho*/
+header h1{
+	font-size: 2em; /*2em significa duas vezes os tamanho da fonte definida no html direto, no caso 16px*/
+	margin-bottom: 10px; /*distanciamento para a linha abaixo*/
+	color: #5e5e5e; /*cor aplicada diretamente do h1*/
+	font-weight: 300; /*para tirar o peso da fonte, regra do negrito 100a900, onde 100 é normal e 900 é totalmente negrito*/
+} 
+
+/*chama a section dps a class botoes-links, para trabalhar especificamente*/
+section.botoes-links{
+	display: flex; /*aplicado para não ficar todos os icones um ao lado do outro*/
+	flex-direction: column; /*aplicado para ficar em coluna um ao lado do outro*/
+	gap: 20px; /*aplicado para dar espaçamento entre os itens*/
+
+}
+/*puxando a tag (a) e chamando o botão para aplicar o estilo mais especifico*/
+a.links button {
+	width: 100%; /*aplicado para o botão ficar 100% o tamanho do container*/
+	padding: 10px 20px; /*espaçamento interno, primeiro valor é em cima e baixo e o outro valor é direita e equerda*/
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: none; /*para tirar as bordas do botão*/
+	border-radius: 30px; /*para arrdondar as bordas do botão*/
+	font-size: 1.2em; /*tamanho da font relativo ao tamanho pre definido do html, 16px*/
+	cursor: pointer; /*para o cursor ficar em forma de dedo quando for clicar no botão*/
+	color: #282828; /*adicionando cor para os itens dentro do button*/
+	transition: .3s; /*adicionando uma transição para pseudoclasse que eu criei (hover) sempre colocar o (.)dps a unidade de segundos*/
+}
+
+/*chamando a.link para estilizar os icones e também o ( 'i' que vem da class dos buttton) para também estilizar os icones dos botões*/
+a.links i{
+	font-size: 2em;
+}
+
+/*trabalhando com a pseudoclasse (hover) para adicionar animação nos botões tanto nos links quanto no footer*/
+a.links button:hover, footer a.rodape:hover {
+	transform: scale(1.05); /*nesse caso foi uma animação de escala*/
+}
+
+/*ESTILO DO FOOTER*/
+
+footer {
+	text-align: center; /*para colocar os elementos no meio da tela*/
+	margin: 20px; /*para adicionar um espaçamento fora do container footer*/
+}
+
+/*chamando o container footer depois a class rodape, para ficar mais especifico*/
+footer a.rodape{
+	width: 60px;
+	height: 60px;
+	display: inline-block; /*tem que transformar essa propriedade pois estou estilizando links, que são propriedades inline level, width e height só funcionam pra block level*/
+	color: #282828;
+	font-size: 2em;
+	line-height: 60px; /*serve para colocar os itens alinhados na horizontal com a mesma altura*/
+	border-radius: 50%; /*serve para deixar o container em formato de circulo*/
+	margin: 0 10px; /*margin zero para cima e baixo e de 10px para ambos os lados*/
+	transition: .3s; /*adicionando uma transição para pseudoclasse que eu criei (hover) sempre colocar o (.)dps a unidade de segundos*/
+}
